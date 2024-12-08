@@ -1,0 +1,13 @@
+{
+  "name": "packages",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "postcss": "8.4.49",
+    "franken-ui": "2.0.0-internal.12",
+    "tailwindcss":"3.4.16"
+  }
+}

@@ -13,12 +13,34 @@ templ Base() {
 			<meta charset="UTF-8"/>
 			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 			<link rel="stylesheet" href="/public/styles.css"/>
-			<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-			<script src="https://unpkg.com/alpinejs" defer></script>
 			<script src="https://unpkg.com/htmx.org@1.9.9" defer></script>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js"></script>
+			<link
+				rel="stylesheet"
+				href="https://unpkg.com/franken-ui@2.0.0-internal.12/dist/css/utilities.min.css"
+			/>
+			<script src="https://unpkg.com/franken-ui@1.1.0/dist/js/core.iife.js" type="module"></script>
+			<script src="https://unpkg.com/franken-ui@1.1.0/dist/js/icon.iife.js" type="module"></script>
+			<script>
+  const htmlElement = document.documentElement;
+
+  const __FRANKEN__ = JSON.parse(localStorage.getItem("__FRANKEN__") || "{}");
+
+  if (
+    __FRANKEN__.mode === "dark" ||
+    (!__FRANKEN__.mode &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches)
+  ) {
+    htmlElement.classList.add("dark");
+  } else {
+    htmlElement.classList.remove("dark");
+  }
+
+  htmlElement.classList.add(__FRANKEN__.theme || "uk-theme-test");
+  htmlElement.classList.add(__FRANKEN__.radii || "uk-radii-md");
+  htmlElement.classList.add(__FRANKEN__.shadows || "uk-shadows-sm");
+</script>
 		</head>
-		<body class="antialiased">
+		<body>
 			@components.Navigation()
 			{ children... }
 		</body>

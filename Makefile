@@ -1,3 +1,5 @@
+.PHONY: templ templ-watch templ-fmt css
+
 run: build
 	@./bin/app
 
@@ -47,8 +49,12 @@ air:
 	air -c .air.toml
 
 templ:
-	templ generate --watch
+	templ generate
 
-# npm i -g tailwindcss@3.4.3
+templ-watch:
+	templ generate --watch
+templ-fmt:
+	templ fmt pages/*.templ && templ fmt layouts/*.templ && templ fmt components/*.templ
+
 css:
-	tailwindcss -i css/app.css -o public/styles.css --watch   
+	node_modules/tailwindcss/lib/cli.js -i tailwind.css -o public/styles.css  

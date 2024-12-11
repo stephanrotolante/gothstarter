@@ -1,6 +1,6 @@
-.PHONY: templ templ-watch templ-fmt css
+.PHONY: templ templ-watch templ-fmt css minify
 
-run: build
+run: minify css templ-fmt templ build
 	@./bin/app
 
 build:
@@ -58,3 +58,6 @@ templ-fmt:
 
 css:
 	node_modules/tailwindcss/lib/cli.js -i tailwind.css -o public/styles.css  
+
+minify:
+	node minify.js

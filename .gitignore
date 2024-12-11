@@ -1,3 +1,9 @@
 .env
 bin
 node_modules
+public/*.js
+public/*.css
+
+pages/*.go
+layouts/*.go
+components/*.go

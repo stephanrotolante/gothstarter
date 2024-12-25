@@ -7,12 +7,6 @@ build:
 	@go build -o bin/app .
 
 
-css:
-	tailwindcss -i views/css/app.css -o public/styles.css --watch   
-
-
-
-
 # https://github.com/pressly/goose
 migrate: build-go-goose
 	bin/Goose up

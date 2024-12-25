@@ -31,9 +31,10 @@ templ Base() {
     htmlElement.classList.remove("dark");
   }
 
-  htmlElement.classList.add(__FRANKEN__.theme || "uk-theme-test");
+  htmlElement.classList.add(__FRANKEN__.theme || "uk-theme-zinc");
   htmlElement.classList.add(__FRANKEN__.radii || "uk-radii-md");
   htmlElement.classList.add(__FRANKEN__.shadows || "uk-shadows-sm");
+    htmlElement.classList.add(__FRANKEN__.font || "uk-font-sm");
 </script>
 		</head>
 		<body class="bg-background text-foreground">

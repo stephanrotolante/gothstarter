@@ -6,7 +6,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "franken-ui": "2.0.0-internal.12",
+    "franken-ui": "2.0.0-internal.23",
     "postcss": "8.4.49",
     "tailwindcss": "3.4.16",
     "terser": "^5.37.0"

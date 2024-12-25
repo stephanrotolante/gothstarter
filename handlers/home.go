@@ -7,5 +7,5 @@ import (
 )
 
 func HandleHome(w http.ResponseWriter, r *http.Request) error {
-	return utils.Render(w, r, pages.Index())
+	return utils.RenderComponent(w, r, pages.Index())
 }

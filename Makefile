@@ -48,7 +48,7 @@ templ:
 templ-watch:
 	templ generate --watch
 templ-fmt:
-	templ fmt pages/*.templ && templ fmt layouts/*.templ && templ fmt components/*.templ
+	templ fmt pages && templ fmt layouts && templ fmt components
 
 css:
 	node_modules/tailwindcss/lib/cli.js -i tailwind.css -o public/styles.css  

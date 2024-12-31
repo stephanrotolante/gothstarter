@@ -1,5 +1,9 @@
 package components
 
+import (
+	"os"
+)
+
 templ ThemeSwitcher() {
 	<div class="uk-inline">
 		<button class="uk-btn uk-btn-default">
@@ -28,22 +32,24 @@ templ ThemeSwitcher() {
 						<option data-hex="#facc15" value="uk-theme-yellow">Yellow</option>
 						<option data-hex="#7c3aed" value="uk-theme-violet">Violet</option>
 					</optgroup>
-					<optgroup data-key="radii" label="Radii">
-						<option value="uk-radii-none">None</option>
-						<option value="uk-radii-sm">Small</option>
-						<option value="uk-radii-md">Medium</option>
-						<option value="uk-radii-lg">Large</option>
-					</optgroup>
-					<optgroup data-key="font" label="Font">
-						<option value="uk-font-sm">Small</option>
-						<option value="uk-font-base">Default</option>
-					</optgroup>
-					<optgroup data-key="shadows" label="Shadows">
-						<option value="uk-shadows-none">None</option>
-						<option value="uk-shadows-sm">Small</option>
-						<option value="uk-shadows-md">Medium</option>
-						<option value="uk-shadows-lg">Large</option>
-					</optgroup>
+					if os.Getenv("DEV") != "" {
+						<optgroup data-key="radii" label="Radii">
+							<option value="uk-radii-none">None</option>
+							<option value="uk-radii-sm">Small</option>
+							<option value="uk-radii-md">Medium</option>
+							<option value="uk-radii-lg">Large</option>
+						</optgroup>
+						<optgroup data-key="font" label="Font">
+							<option value="uk-font-sm">Small</option>
+							<option value="uk-font-base">Default</option>
+						</optgroup>
+						<optgroup data-key="shadows" label="Shadows">
+							<option value="uk-shadows-none">None</option>
+							<option value="uk-shadows-sm">Small</option>
+							<option value="uk-shadows-md">Medium</option>
+							<option value="uk-shadows-lg">Large</option>
+						</optgroup>
+					}
 					<optgroup data-key="mode" label="Mode">
 						<option data-icon="sun" value="light">Light</option>
 						<option data-icon="moon" value="dark">Dark</option>

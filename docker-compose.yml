@@ -12,3 +12,13 @@ services:
       - "5432:5432"
     volumes:
       - *:/var/lib/postgresql/data
+  dev-service:
+    container_name:  gothstarter-dev-container
+    build:
+      context: .
+      dockerfile: Development.Dockerfile
+    volumes:
+      - ./:/app
+    ports:
+      - "4000:4000"
+

@@ -4,9 +4,26 @@ import (
 	"gothstarter/layouts"
 )
 
-templ Index() {
+templ IndexStyles() {
+	<style type="text/css">
+		p {
+			font-family: sans-serif;
+		}
+		.button {
+			background-color: black;
+			foreground-color: white;
+		}
+	</style>
+}
+
+templ Index(data string) {
 	@layouts.Base() {
+		@IndexStyles()
 		<div class="flex flex-col items-center"></div>
-		<script src="/public/helloWorld.js" data-some-field="hey there"></script>
+		<div id="app">
+			<message-component></message-component>
+		</div>
+		<script src="/public/helloWorld.js" data-some-field="hey there" data-some-data={ data }></script>
+		<button onclick="homePageClickButton(this);">click me!</button>
 	}
 }

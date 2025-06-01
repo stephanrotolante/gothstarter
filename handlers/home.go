@@ -7,5 +7,8 @@ import (
 )
 
 func HandleHome(w http.ResponseWriter, r *http.Request) error {
-	return utils.RenderComponent(w, r, pages.Index())
+
+	data := `{"name":"Vince","role":"Software Engineer","location":"Earth"}`
+
+	return utils.RenderComponent(w, r, pages.Index(data))
 }
